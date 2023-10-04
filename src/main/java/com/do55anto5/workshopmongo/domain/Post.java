@@ -1,7 +1,6 @@
 package com.do55anto5.workshopmongo.domain;
 
 import java.io.Serializable;
-import java.time.Instant;
 import java.util.Objects;
 
 import org.springframework.data.annotation.Id;
