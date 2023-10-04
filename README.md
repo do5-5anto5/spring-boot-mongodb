@@ -4,7 +4,7 @@
 ```mermaid
 graph LR
   User["User<br/>-id: String<br/>-name: String<br/>-email: String"]
-  Post["Post<br/>-id: String<br/>-date: Instant<br/>-title: String<br/>-body: String"]
+  Post["Post<br/>-id: String<br/>-date: String<br/>-title: String<br/>-body: String"]
   Comment["Comment<br/>-id: String<br/>-text: String<br/>-date: Instant"]
 
   User --> |1..*| Post

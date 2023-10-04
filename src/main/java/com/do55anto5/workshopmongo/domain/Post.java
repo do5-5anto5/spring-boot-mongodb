@@ -16,14 +16,14 @@ public class Post implements Serializable{
 	
 	@Id
 	private String id;
-	private Instant date;
+	private String date;
 	private String title;
 	private String body;
 	private AuthorDTO author;
 	
 	public Post() {}
 
-	public Post(String id, Instant date, String title, String body, AuthorDTO author) {
+	public Post(String id, String date, String title, String body, AuthorDTO author) {
 		super();
 		this.id = id;
 		this.date = date;
@@ -40,11 +40,11 @@ public class Post implements Serializable{
 		this.id = id;
 	}
 
-	public Instant getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Instant date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
