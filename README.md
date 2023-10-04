@@ -2,26 +2,13 @@
 
 ## Classes Diagram
 ```mermaid
-classDiagram
-  class User {
-    -id: String
-    -name: String
-    -email: String    
-  }
-  class Post {
-    -id: String
-    -name: String
-    -date: Instant
-    -title: String
-    -body: String
-  }
-  class Comment {
-    -id: String
-    -text: String
-    -date: Instant
-  }
+graph LR
+  User["User<br/>-id: String<br/>-name: String<br/>-email: String"]
+  Post["Post<br/>-id: String<br/>-name: String<br/>-date: Instant<br/>-title: String<br/>-body: String"]
+  Comment["Comment<br/>-id: String<br/>-text: String<br/>-date: Instant"]
 
-  User -- "1..*" Post
-  Post -- "1..*" Comment
-  Comment --> User
+  User --> |1..*| Post
+  Post -.->|1..*| Comment
+  Post -.->|1| User
+  Comment -.->|1| User
 ```
