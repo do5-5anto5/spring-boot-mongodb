@@ -1,26 +1,32 @@
 package com.do55anto5.workshopmongo.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.do55anto5.workshopmongo.dto.AuthorDTO;
+import com.do55anto5.workshopmongo.dto.CommentDTO;
 
 @Document
-public class Post implements Serializable{
+public class Post implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	private String id;
 	private String date;
 	private String title;
 	private String body;
 	private AuthorDTO author;
-	
-	public Post() {}
+
+	private List<CommentDTO> comments = new ArrayList<>();
+
+	public Post() {
+	}
 
 	public Post(String id, String date, String title, String body, AuthorDTO author) {
 		super();
@@ -66,11 +72,19 @@ public class Post implements Serializable{
 	public AuthorDTO getAuthor() {
 		return author;
 	}
-	
+
 	public void setAuthor(AuthorDTO author) {
 		this.author = author;
 	}
-	
+
+	public List<CommentDTO> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<CommentDTO> comments) {
+		this.comments = comments;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -88,6 +102,4 @@ public class Post implements Serializable{
 		return Objects.equals(id, other.id);
 	}
 
-	
-	
 }
